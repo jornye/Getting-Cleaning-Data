@@ -1,0 +1,74 @@
+Code Book - run_analysis.R
+Script Description
+R script developed as part of Week 4 Peer Graded Assignment for Getting and Cleaning Data Course Project. The purpose of the script is to merge the test and train datasets included in the UCI HAR dataset specified in the course project instructions, and ultimately satisfy the marking criteria for the peer graded assignment. 
+
+UCI HAR Dataset Files Used
+-	'features.txt': List of all features.
+
+-	'activity_labels.txt': Links the class labels with their activity name.
+
+-	'train/X_train.txt': Training set.
+
+-	'train/y_train.txt': Training labels.
+
+-	'test/X_test.txt': Test set.
+
+-	'test/y_test.txt': Test labels.
+
+-	'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+
+-	'train/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+
+
+Specified Variables & Values
+-	fileURL: Specifies file URL for downloading project data
+
+-	features: Dataframe based on features.txt
+
+-	activity_labels: Dataframe based on activity_labels.txt
+
+-	x_train: Dataframe based on X_train.txt
+
+-	y_train: Dataframe based on y_train.txt
+
+-	subject_train: Dataframe based on subject_train.txt
+
+-	train_merged: Dataframe with merged data from y_train & activity_labels
+
+-	train_merged_colnames: list of column names as strings for train_merged
+
+-	subject_train_colnames: column name string for subject_train
+
+-	train_colnames: list of column names as strings from features.txt 
+
+-	train: dataframe binding columns for all train data
+
+-	 fileURL: Specifies file URL for downloading project data
+
+-	features: Dataframe based on features.txt
+
+-	activity_labels: Dataframe based on activity_labels.txt
+
+-	x_test: Dataframe based on X_test.txt
+
+-	y_test: Dataframe based on y_test.txt
+
+-	subject_test: Dataframe based on subject_test.txt
+
+-	test_merged: Dataframe with merged data from y_test & activity_labels
+
+-	test_merged_colnames: list of column names as strings for test_merged
+
+-	subject_test_colnames: column name string for subject_test
+
+-	test_colnames: list of column names as strings from features.txt 
+
+-	test: dataframe binding columns for all test data
+
+-	single_dataset: dataframe with all binded train and test data
+
+-	strings: list of strings to select only column measurements on mean and standard deviation
+
+-	mean_std_only: subset dataframe based on ‘single_dataset’ with only column measurements on mean and standard deviation and descriptive columns for subject and activity
+
+-	variable_avg: Secondary/independent tidy dataset based on ‘mean_std_only’ with average of each variable for each activity for each subject

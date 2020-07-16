@@ -4,7 +4,6 @@ install.packages("plyr")
 library(dplyr)
 library(plyr)
 
-
 #Read in features and labels
 wd1 <- list.files(pattern = "UCI HAR Dataset")
 setwd(wd1)
@@ -73,4 +72,4 @@ mean_std_only <- select(single_dataset, matches(strings))
 variable_avg <- mean_std_only %>% group_by(subject, activityLabelID,activityLabel) %>% summarize_all(list(mean))
 
 #Write dataset to csv
-write.csv(variable_avg, "tidy_data.csv", row.names = FALSE)
+write.table(variable_avg, "tidy_data.txt", row.names = FALSE)

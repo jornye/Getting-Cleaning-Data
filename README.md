@@ -1,5 +1,3 @@
-# Getting-Cleaning-Data
-Github repo for final peer-graded assignment in Getting &amp; Cleaning Data course
 ==================================================================
 Getting and Cleaning Data Course Project
 run_analysis.R Read Me
@@ -37,7 +35,7 @@ library(dplyr)
 library(plyr)
 
 #Step 2 Set working directory to UCI HAR Dataset and read in features.txt and acvitity_labels.txt by " " delimiter without headers
-wd1 <- list.files(pattern = "UCI HAR Dataset")
+wd1 <- list.files(pattern = "HAR")
 setwd(wd1)
 features <- read.delim("features.txt", sep = " ", header = FALSE)
 activity_labels <- read.delim("activity_labels.txt",sep = " ", header = FALSE)
@@ -106,5 +104,5 @@ mean_std_only <- select(single_dataset, matches(strings))
 #Step 20 Subset and summarize means for each row and subject
 variable_avg <- mean_std_only %>% group_by(subject, activityLabelID,activityLabel) %>% summarize_all(list(mean))
 
-# Step 21 Write secondary independent tidy dataset with the average of each variable for each activity and each subject to csv.
-write.csv(variable_avg, "tidy_data.csv")
+#Step 21 Write secondary independent tidy dataset with the average of each variable for each activity and each subject to csv.
+write.table(variable_avg, "tidy_data.txt", row.names = FALSE)
